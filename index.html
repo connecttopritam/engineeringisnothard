@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Is Not Hard – Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MorphSVGPlugin.min.js"></script>
+</head>
+
+<body data-theme="light">
+
+<!-- ================== LOADING SCREEN ================== -->
+<div id="loading-screen">
+    <div class="circuit-container">
+        <svg id="circuit-svg" width="240" height="240" viewBox="0 0 240 240">
+            <path id="circuit-path" 
+                d="M20 20 L120 20 L120 120 L220 120 L220 220 L20 220 Z 
+                   M120 20 L120 120 L20 120 
+                   M120 120 L220 20" 
+                stroke="#00ffbb" 
+                fill="none" 
+                stroke-width="4" 
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </div>
+
+    <h2 class="loading-title">Engineering Is Not Hard</h2>
+</div>
+
+<!-- ================== LIGHTNING FLASH OVERLAY ================== -->
+<div id="lightning-flash"></div>
+
+<!-- DOOR ANIMATION -->
+<div id="door-animation" class="overlay">
+    <img src="assets/door.png" id="door" />
+</div>
+
+<!-- SUITCASE ANIMATION -->
+<div id="suitcase-animation" class="overlay">
+    <div id="suitcase">
+        <div class="lid"></div>
+        <div class="box"></div>
+    </div>
+</div>
+
+<!-- ================== HEADER ================== -->
+<header class="header">
+    <nav class="nav">
+        <h1 class="logo">Engineering Is Not Hard</h1>
+
+        <div class="nav-links">
+            <a href="#home" onclick="startLightning(); return false;">Home ⚡</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills" onclick="startSuitcase(); return false;">Skills 💼</a>
+            <a href="#contact">Contact</a>
+
+            <!-- Theme toggle -->
+            <div class="theme-switch-container">
+                <span>☀️</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span>🌙</span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- ================== HERO ================== -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="hero-title">Electrical & Electronics Engineer</h1>
+        <p class="hero-sub">Power Electronics • Embedded Systems • Automation</p>
+        <a href="#projects" class="btn">Explore Projects</a>
+
+        <!-- Lightning Bolt SVG -->
+        <svg id="bolt" width="120" viewBox="0 0 100 200">
+            <path id="bolt-path"
+                d="M50 0 L20 80 H60 L10 200 L90 90 H50 Z"
+                fill="#ffcc00" />
+        </svg>
+    </div>
+</section>
+
+<!-- ================== PROJECTS ================== -->
+<section id="projects" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card tilt">
+            <img src="assets/project1.jpg" />
+            <h3>Inverter System</h3>
+            <p>High-efficiency inverter with custom PCB and DSP control.</p>
+        </div>
+
+        <div class="project-card tilt">
+            <img src="assets/project2.jpg" />
+            <h3>IoT Power Meter</h3>
+            <p>Real-time consumption monitoring with cloud dashboard.</p>
+        </div>
+
+        <div class="project-card tilt">
+            <img src="assets/project3.jpg" />
+            <h3>PID Motor Controller</h3>
+            <p>Precise motor control using STM32 + PID loop tuning.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================== SKILLS ================== -->
+<section id="skills" class="section">
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="skills-list">
+
+        <div class="skill-item">
+            <h3>Power Electronics</h3>
+            <p>DC-DC, inverters, gate-drive circuits, thermal design.</p>
+        </div>
+
+        <div class="skill-item">
+            <h3>Embedded Systems</h3>
+            <p>STM32, ESP32, FreeRTOS, PCB design, optimization.</p>
+        </div>
+
+        <div class="skill-item">
+            <h3>Control Systems</h3>
+            <p>PID, state-space modeling, feedback loop design.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================== CONTACT ================== -->
+<section id="contact" class="section contact-section">
+    <h2 class="section-title">Contact Me</h2>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button class="btn">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 EngineeringIsNotHard. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
